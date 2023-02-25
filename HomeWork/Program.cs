@@ -46,3 +46,24 @@ int GetLengthArr(string[] arr)
     }
     return count;
 }
+// Метод заполнения одномерного массива строк
+string[] Gen1DArr(int len, string[] arr)
+{
+    string[] arr2 = new string[len];
+    for (int i = 0; i < len; i++)
+    {
+        arr2[i] = arr[i];
+    }
+    return arr2;
+}
+
+// Метод печати одномерного массива строк
+void Print1DArr(string[] arr)
+{
+    Console.Write("[");
+    for (int i = 0; i < arr.Length - 1; i++)
+    {
+        Console.Write(arr[i] + ", ");
+    }
+    Console.WriteLine(arr[arr.Length - 1] + "]");
+}
