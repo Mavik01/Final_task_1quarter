@@ -6,6 +6,10 @@
 // ["1234", "1567", "-2", "computer science"] -> ["-2"]
 // ["Russia", "Denmark", "Kazan"] -> []
 
+Console.Write("Введите данные через пробел: ");
+string[] arr = StringToArr(Console.ReadLine());
+string [] arr2 = SeachColSym(Gen1DArr(GetLengthArr(arr),arr));
+Print1DArr((Gen1DArr(GetLengthArr(arr2),arr2)));
 
 // Метод преобразования строки в массив строк
 string[] StringToArr(string input)
@@ -66,4 +70,20 @@ void Print1DArr(string[] arr)
         Console.Write(arr[i] + ", ");
     }
     Console.WriteLine(arr[arr.Length - 1] + "]");
+}
+
+// Метод, заполняющий новый массив значениями, в которых не более 3 символов
+string[] SeachColSym(string[] arr)
+{
+    int index = 0;
+    string[] arr2 = new String[arr.Length];
+            for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i].Length <= 3)
+            {
+                arr2[index] = arr[i];
+                index++;
+            }
+        }
+    return arr2;
 }
